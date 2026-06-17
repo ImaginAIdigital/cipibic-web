@@ -1,26 +1,22 @@
-const nacionales = [
-  { name: "MAPA", full: "Maquinaria y Alimentos para el Planeta Agropecuario", href: "#" },
-  { name: "ADIMRA", full: "Asociación de Industriales Metalúrgicos de la República Argentina", href: "#" },
-];
-
 const regionales = [
-  { name: "CIMR", full: "Cámara Industrial Metalúrgica de Rafaela", href: "#" },
-  { name: "CIME", full: "Cámara Industrial Metalúrgica de Esperanza", href: "#" },
-  { name: "CAMSFE", full: "Cámara de la Industria Metalúrgica de Santa Fe", href: "#" },
+  { name: "CIMR", full: "Cámara de Industria, Metalurgia y Rubros Conexos" },
+  { name: "CIME", full: "Cámara de Industria Metalúrgica de Esperanza" },
+  { name: "CAMSFE", full: "Cámara Metalúrgica de Santa Fe" },
 ];
 
 const convenios = [
   { name: "INTI", full: "Instituto Nacional de Tecnología Industrial" },
   { name: "INTA", full: "Instituto Nacional de Tecnología Agropecuaria" },
-  { name: "MinCyT", full: "Ministerio de Ciencia, Tecnología e Innovación" },
   { name: "UTN Santa Fe", full: "Universidad Tecnológica Nacional — Facultad Regional Santa Fe" },
   { name: "UTN Avellaneda", full: "Universidad Tecnológica Nacional — Facultad Regional Avellaneda" },
-  { name: "UNAJ", full: "Universidad Nacional Arturo Jauretche" },
+  { name: "INNOVAT", full: "INNOVAT" },
+  { name: "MinCyT", full: "Ministerio de Ciencia y Tecnología" },
+  { name: "ENERFE", full: "ENERFE" },
   { name: "UNGS", full: "Universidad Nacional de General Sarmiento" },
   { name: "UNQ", full: "Universidad Nacional de Quilmes" },
-  { name: "CITERA", full: "Centro de Investigación en Tecnología para Energías Renovables Alternativas" },
-  { name: "CEPLAM", full: "Centro de Empresas para la Producción de Plantas y Maquinaria" },
-  { name: "Cluster Eólico", full: "Cluster Eólico Argentino" },
+  { name: "CITERA", full: "Clúster de Industrias y Tecnologías de las Energías Renovables Argentinas" },
+  { name: "CEPLAM", full: "Clúster Exportador de Plantas Llave en Mano" },
+  { name: "Cluster Eólico", full: "Clúster Eólico Argentino" },
 ];
 
 function InstitutionCard({ name, full, href }: { name: string; full: string; href?: string }) {
@@ -54,13 +50,6 @@ export default function InstitucionesPage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-14">
-
-        <div>
-          <h2 className="text-xl font-bold text-[#1A1A1A] mb-6">Instituciones Nacionales</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {nacionales.map((i) => <InstitutionCard key={i.name} {...i} />)}
-          </div>
-        </div>
 
         <div>
           <h2 className="text-xl font-bold text-[#1A1A1A] mb-6">Cámaras Regionales</h2>

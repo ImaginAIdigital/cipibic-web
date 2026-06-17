@@ -1,43 +1,16 @@
 import Link from "next/link";
 
-const serviciosGenerales = [
-  {
-    title: "Representación gremial",
-    desc: "Gestión de los intereses sectoriales ante organismos públicos, ministerios y entidades reguladoras.",
-  },
-  {
-    title: "Oportunidades comerciales",
-    desc: "Identificación y difusión de licitaciones, proyectos y demandas del sector público y privado.",
-  },
-  {
-    title: "Asesoramiento tributario y aduanero",
-    desc: "Información actualizada sobre regímenes fiscales, arancelarios y de promoción industrial.",
-  },
-  {
-    title: "Defensa comercial",
-    desc: "Protección frente a prácticas desleales de comercio y competencia desleal importada.",
-  },
-  {
-    title: "Vinculación institucional",
-    desc: "Participación en consejos público-privados, mesas sectoriales y organismos nacionales e internacionales.",
-  },
-  {
-    title: "Clusters y proyectos asociativos",
-    desc: "Articulación entre empresas para proyectos conjuntos en energías renovables, bioeconomía, minería y más.",
-  },
-];
-
 const serviciosSocios = [
-  "Directorio de empresas socias",
-  "Directorio de productos y capacidades",
-  "Líneas de financiamiento actualizadas",
-  "Información de exportación y mercados externos",
-  "Proyectos mineros en licitación",
-  "Operadoras energéticas y sus demandas",
-  "Industria láctea — equipos y proveedores",
-  "Industria farmacéutica — normativa y oportunidades",
-  "Industria petrolera — proyectos y contratos",
-  "Boletines y documentos técnicos exclusivos",
+  "Directorio interactivo de empresas, productos ofrecidos, insumos requeridos y contactos comerciales",
+  "Información sobre líneas de financiamiento bancario",
+  "Informe de Situación Sectorial",
+  "Cómo exportar: aspectos estratégicos, operativos y normativos",
+  "Directorio de operadoras y proyectos mineros",
+  "Directorio de EPCistas y contratistas",
+  "Directorio de Energía Eléctrica: Generación, transporte y distribución",
+  "Directorio de empresas de la industria láctea",
+  "Directorio de la industria farmacéutica, cosmética, sanidad animal y química",
+  "Directorio de la industria hidrocarburífera",
 ];
 
 export default function ServiciosPage() {
@@ -55,15 +28,18 @@ export default function ServiciosPage() {
 
       {/* Servicios generales */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-2xl font-bold text-[#1A1A1A] mb-2">Servicios para asociados</h2>
-        <p className="text-[#7A7A7A] mb-10">Disponibles para todas las empresas socias de CIPIBIC.</p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {serviciosGenerales.map((s) => (
-            <div key={s.title} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h3 className="font-bold text-[#1A1A1A] mb-2">{s.title}</h3>
-              <p className="text-[#7A7A7A] text-sm leading-relaxed">{s.desc}</p>
-            </div>
-          ))}
+        <h2 className="text-2xl font-bold text-[#1A1A1A] mb-8">Servicios CIPIBIC al Asociado</h2>
+        <div className="max-w-4xl space-y-5 text-[#7A7A7A] leading-relaxed">
+          <p>Realizamos de manera continua una gestión de promoción de los intereses sectoriales al conjunto de la sociedad en general y a los encargados de tomar decisiones en materia de políticas industriales en particular.</p>
+          <p>Trabajamos en la identificación y difusión de oportunidades comerciales. Difundimos entre los socios trabajos propios y de terceros sobre: estudios políticos y económicos, estadísticas sobre importaciones y exportaciones, análisis de posiciones arancelarias sensibles y específicas de nuestros socios, novedades fiscales, laborales y de interés general.</p>
+          <p>Mantenemos contacto frecuente y habitual con todas las dependencias, organismos y funcionarios públicos en las áreas de incumbencia de nuestra actividad, tanto del poder ejecutivo como del legislativo. Acompañamos y apoyamos a los asociados en las gestiones que inicien ante distintos organismos o dependencias públicas o privadas.</p>
+          <p>Damos asesoramiento y orientación en materia de: Régimen para fabricantes de bienes de capital, Saldo Técnico de IVA y demás regímenes de interés.</p>
+          <p>Mantenemos informadas y actualizadas a las empresas sobre las regulaciones y normas aplicables al comercio exterior y las negociaciones internacionales. Facilitamos datos estadísticos sobre la importación y exportación de bienes.</p>
+          <p>Formamos parte del Consejo Público Privado para la Promoción de las Exportaciones, trabajando junto a la Cancillería Argentina en la definición de actividades promocionales específicas para los diversos sectores de la actividad económica –entre ellos bienes de capital/plantas llave en mano–, con el fin de acompañar a nuestras empresas en la internacionalización de sus productos en el exterior.</p>
+          <p>Nos ocupamos de la defensa comercial frente a prácticas desleales en el comercio internacional, como la aplicación de las medidas antidumping, medidas aduaneras, valores criterio, aduanas especializadas, normas técnicas al comercio, licencias de importación, etc.</p>
+          <p>Brindamos asesoramiento en temas operativos relacionados con la importación, exportación, aduana, bancos, certificaciones, financiación, etc.</p>
+          <p>Mantenemos un canal de diálogo con las áreas técnicas de la Administración Federal de Ingresos Públicos, la Dirección General de Aduanas, el Ministerio de Desarrollo Productivo, Ministerio de Economía, la Secretaría de Energía, la Comisión Nacional de Comercio Exterior, distintas Cámaras Binacionales y Embajadas Argentinas radicadas en el exterior y Embajadas de países extranjeros radicadas en el país, distintas Asociaciones y Cámaras del quehacer nacional e internacional.</p>
+          <p>Hemos constituido como comisiones de trabajo el <strong className="text-[#1A1A1A]">Clúster Eólico Argentino</strong>, el <strong className="text-[#1A1A1A]">Clúster de Industrias y Tecnologías de las Energías Renovables Argentinas</strong>, el <strong className="text-[#1A1A1A]">Clúster Exportador de Plantas Llave en Mano</strong>, el <strong className="text-[#1A1A1A]">Clúster Industrial Minero Argentino</strong> y las áreas de <strong className="text-[#1A1A1A]">Bioeconomía</strong> y <strong className="text-[#1A1A1A]">Transición Energética</strong>, para garantizar el abordaje concreto y específico de estas actividades de alto valor agregado. Asimismo, integramos junto a otras cámaras colegas el <strong className="text-[#1A1A1A]">Observatorio para el Desarrollo Industrial del Petróleo y el Gas Argentino</strong> y la <strong className="text-[#1A1A1A]">Marca Sectorial Maquinaria Argentina para Alimentos</strong>, con el fin de potenciar el alcance y beneficios para los socios mediante el trabajo conjunto.</p>
         </div>
       </section>
 
