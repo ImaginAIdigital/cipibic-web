@@ -1,3 +1,48 @@
+const comisionDirectiva = [
+  { cargo: "Presidente", nombre: "Ing. Luis Manini", ubicacion: "Quilmes – Buenos Aires", empresa: "Secin S.A." },
+  { cargo: "Vicepresidente 1°", nombre: "Ing. Jorge Stratta", ubicacion: "Monte Vera – Santa Fe", empresa: "Asema S.A." },
+  { cargo: "Vicepresidente 2°", nombre: "Ing. Hugo Tagliatti", ubicacion: "El Trébol – Santa Fe", empresa: "Máximo Bauducco S.A." },
+  { cargo: "Secretario", nombre: "Lic. Marcelo Miron", ubicacion: "Villa Martelli – Buenos Aires", empresa: "Electromecánica Brenta S.A." },
+  { cargo: "Prosecretario", nombre: "Lic. Jorge Scian", ubicacion: "Esteban Echeverría – Buenos Aires", empresa: "TYC S.A." },
+  { cargo: "Tesorero", nombre: "Ing. Ricardo Bernal Castro", ubicacion: "Ezeiza – Buenos Aires", empresa: "CONUAR S.A." },
+  { cargo: "Protesorero", nombre: "Lic. Bernardo Sandaza", ubicacion: "Esperanza – Santa Fe", empresa: "FIMACO SA" },
+];
+
+const vocalesTitulares = [
+  { nombre: "Ing. César Obregón", ubicacion: "Galvez – Santa Fe", empresa: "Tadeo Czerweny S.A." },
+  { nombre: "Lic. Ivana Taborda", ubicacion: "Sauce Viejo – Santa Fe", empresa: "FACORSA S.A." },
+];
+
+const vocalesSuplentes = [
+  { nombre: "Tec. Omar Volonte", ubicacion: "Esperanza – Santa Fe", empresa: "S.A. Lito Gonella E Hijo I.C.F.I." },
+  { nombre: "Sr. Jorge Simonutti", ubicacion: "Esperanza – Santa Fe", empresa: "Sica Metalúrgica Arg. SA." },
+  { nombre: "Sr. Manuel Romano", ubicacion: "Rosario – Santa Fe", empresa: "EMU S.A." },
+  { nombre: "Cdor. Gastón Guarino", ubicacion: "Florencio Varela – Buenos Aires", empresa: "Metalúrgica Calviño S.A." },
+];
+
+const revsoraCuentas = [
+  { cargo: "Síndico Titular", nombre: "Sr. Raúl Capano", ubicacion: "Llavallol – Buenos Aires", empresa: "Cetec Sudamericana S.A." },
+];
+
+const equipoTecnico = [
+  { area: "Administración", nombre: "Tec. Sup. María Inés Olave", email: "admin@cipibicargentina.org.ar" },
+  { area: "Comercio exterior", nombre: "Lic. Alejandra Cerquetella", email: "comex@cipibicargentina.org.ar" },
+  { area: "Dirección Ejecutiva", nombre: "Ing. Rubén Fabrizio", email: "info@cipibicargentina.org.ar" },
+];
+
+function MemberRow({ cargo, nombre, ubicacion, empresa }: { cargo?: string; nombre: string; ubicacion: string; empresa: string }) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-1 py-4 border-b border-gray-100 last:border-0">
+      {cargo && <p className="text-sm font-semibold text-[#465FCB]">{cargo}</p>}
+      <div className={cargo ? "" : "sm:col-start-2"}>
+        <p className="font-medium text-[#1A1A1A] text-sm">{nombre}</p>
+        <p className="text-[#7A7A7A] text-xs mt-0.5">{empresa}</p>
+      </div>
+      <p className="text-[#7A7A7A] text-sm">{ubicacion}</p>
+    </div>
+  );
+}
+
 export default function AutoridadesPage() {
   return (
     <>
@@ -8,38 +53,65 @@ export default function AutoridadesPage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="max-w-3xl space-y-6">
-          <p className="text-[#7A7A7A] leading-relaxed">
-            La Cámara de Industriales de Proyectos e Ingeniería de Bienes de Capital – CIPIBIC es una entidad gremial empresaria que agrupa a los fabricantes de Bienes de Capital especiales, creadores de tecnología que desarrollan productos con diseño propio y especialmente adaptados a las necesidades del usuario.
-          </p>
-          <p className="text-[#7A7A7A] leading-relaxed">
-            Los Bienes de Capital son bienes duraderos que sirven para fabricar otros bienes o generar servicios.
-          </p>
-          <p className="text-[#7A7A7A] leading-relaxed">
-            Una fábrica de Bienes de Capital es en definitiva una <strong className="text-[#1A1A1A]">FÁBRICA DE FÁBRICAS</strong>, donde se pueden producir los equipos y maquinarias para todo tipo de manufacturas y procesos.
-          </p>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-14">
 
-          <div className="grid sm:grid-cols-3 gap-6 py-8">
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#465FCB]">5.700+</p>
-              <p className="text-[#54595F] text-sm mt-1">empresas argentinas, 98% PyMEs</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#465FCB]">100.000</p>
-              <p className="text-[#54595F] text-sm mt-1">puestos de trabajo directos</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-[#465FCB]">8,6%</p>
-              <p className="text-[#54595F] text-sm mt-1">de los puestos de trabajo industriales</p>
-            </div>
+        {/* Comisión Directiva */}
+        <section>
+          <h2 className="text-xl font-bold text-[#1A1A1A] mb-1">Comisión Directiva 2024–2026</h2>
+          <div className="mt-4">
+            {comisionDirectiva.map((m) => (
+              <MemberRow key={m.nombre} {...m} />
+            ))}
           </div>
+        </section>
 
-          <p className="text-[#7A7A7A] leading-relaxed">
-            El sector de fabricantes nacionales de bienes de capital es muy heterogéneo, agrupa a más de 5.700 empresas argentinas, entre ellas el 98% corresponden a la categoría de PyMEs. El sector genera más de 100.000 puestos de trabajo directos, lo que representa el 8,6% de los puestos de trabajo industriales y el 39% del empleo metalúrgico.
-          </p>
-        </div>
-      </section>
+        {/* Vocales Titulares */}
+        <section>
+          <h2 className="text-xl font-bold text-[#1A1A1A] mb-4">Vocales Titulares</h2>
+          <div>
+            {vocalesTitulares.map((m) => (
+              <MemberRow key={m.nombre} {...m} />
+            ))}
+          </div>
+        </section>
+
+        {/* Vocales Suplentes */}
+        <section>
+          <h2 className="text-xl font-bold text-[#1A1A1A] mb-4">Vocales Suplentes</h2>
+          <div>
+            {vocalesSuplentes.map((m) => (
+              <MemberRow key={m.nombre} {...m} />
+            ))}
+          </div>
+        </section>
+
+        {/* Comisión Revisora */}
+        <section>
+          <h2 className="text-xl font-bold text-[#1A1A1A] mb-4">Comisión Revisora de Cuentas</h2>
+          <div>
+            {revsoraCuentas.map((m) => (
+              <MemberRow key={m.nombre} {...m} />
+            ))}
+          </div>
+        </section>
+
+        {/* Equipo Técnico */}
+        <section>
+          <h2 className="text-xl font-bold text-[#1A1A1A] mb-6">Equipo Técnico</h2>
+          <div className="grid sm:grid-cols-3 gap-5">
+            {equipoTecnico.map((m) => (
+              <div key={m.nombre} className="bg-gray-50 border border-gray-200 rounded-xl p-5">
+                <p className="text-xs font-semibold text-[#6EC1E4] uppercase tracking-wide mb-2">{m.area}</p>
+                <p className="font-semibold text-[#1A1A1A] text-sm mb-1">{m.nombre}</p>
+                <a href={`mailto:${m.email}`} className="text-[#465FCB] text-xs hover:underline break-all">
+                  {m.email}
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </div>
     </>
   );
 }
