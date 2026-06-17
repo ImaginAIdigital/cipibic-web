@@ -17,14 +17,6 @@ const clusters = [
   { name: "CLIMAR", desc: "Climatización y refrigeración industrial", href: "/clusters/climar" },
 ];
 
-const sectors = [
-  "Industria alimenticia",
-  "Química y farmacéutica",
-  "Minería",
-  "Energía y petróleo",
-  "Plantas llave en mano",
-  "Transporte e izaje",
-];
 
 export default function HomePage() {
   return (
@@ -77,30 +69,26 @@ export default function HomePage() {
 
       {/* Quiénes somos */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-[#6EC1E4] text-sm font-semibold uppercase tracking-widest mb-3">¿Quiénes somos?</p>
-            <h2 className="text-3xl font-bold text-[#1A1A1A] mb-5">
-              Representamos la ingeniería industrial argentina
-            </h2>
-            <p className="text-[#7A7A7A] leading-relaxed mb-6">
-              Somos una entidad gremial empresaria que nuclea a fabricantes de bienes de capital
-              especiales: maquinaria y equipos de alto valor agregado, plantas industriales completas
-              y soluciones tecnológicas para los sectores más exigentes.
-            </p>
+        <div className="max-w-4xl space-y-5 text-[#7A7A7A] leading-relaxed">
+          <p>
+            La Cámara de Industriales de Proyectos e Ingeniería de Bienes de Capital – CIPIBIC es una entidad gremial empresaria que agrupa a los fabricantes de Bienes de Capital especiales, creadores de tecnología que desarrollan productos con diseño propio y especialmente adaptados a las necesidades del usuario. Estos productos pueden ser muy diferentes, pero tienen algo en común: un alto valor agregado, ingeniería y tecnología, y donde la utilización de recursos humanos calificados es determinante.
+          </p>
+          <p>
+            Los Bienes de Capital son bienes duraderos que sirven para fabricar otros bienes o generar servicios.
+          </p>
+          <p>
+            Una fábrica de Bienes de Capital es en definitiva una <strong className="text-[#1A1A1A]">FÁBRICA DE FÁBRICAS</strong>, donde se pueden producir los equipos y maquinarias para todo tipo de manufacturas y procesos.
+          </p>
+          <p>
+            El sector de fabricantes nacionales de bienes de capital es muy heterogéneo, agrupa a más de 5.700 empresas argentinas, entre ellas el 98% corresponden a la categoría de PyMEs. El sector genera más de 100.000 puestos de trabajo directos, lo que representa el 8,6% de los puestos de trabajo industriales y el 39% del empleo metalúrgico. El sector de bienes de capital demanda mano de obra calificada, con sueldos en promedio en un 35% por encima del sector manufacturero, y de casi el 50% versus el promedio general de la economía. Además, las empresas que fabrican maquinaria y equipos destinan un 2,9% de su empleo a la realización de actividades de innovación, superando ampliamente el promedio metalúrgico que destina el 2,3% de su empleo a dichas actividades.
+          </p>
+          <p>
+            Dentro de este universo CIPIBIC agrupa a empresas de capital nacional, fabricantes de bienes de capital con alto valor agregado en ingeniería y tecnología. Somos un sector que forma y demanda empleo de alta calificación, tradicionalmente exportador. Estas empresas son proveedoras de maquinaria y equipos especiales, plantas llave en mano y soluciones tecnológicas para diversos sectores como la industria alimenticia, química y farmacéutica, minera y energética; en esta última nuestros socios aportan soluciones para la industria de gas y petróleo, energías nuclear e hidroeléctrica, y entre las renovables eólica, solar y bioenergías entre otras, además de transmisión y distribución de la energía eléctrica.
+          </p>
+          <div className="pt-2">
             <Link href="/autoridades" className="text-[#465FCB] font-semibold text-sm hover:underline">
-              Conocer las autoridades →
+              Conocer más sobre la cámara →
             </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            {sectors.map((s) => (
-              <div
-                key={s}
-                className="bg-[#465FCB]/5 border border-[#465FCB]/15 rounded-lg px-4 py-3 text-sm text-[#54595F] font-medium"
-              >
-                {s}
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -129,6 +117,28 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Accesos rápidos */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="flex flex-wrap gap-3">
+          {[
+            { label: "Noticias", href: "/noticias" },
+            { label: "Mapa Capacidades Industriales", href: "/mapa-capacidades" },
+            { label: "Documentos", href: "/documentos" },
+            { label: "Boletines", href: "/boletines" },
+            { label: "Eventos", href: "/eventos" },
+            { label: "25 Años CIPIBIC: Transición Energética y Bioeconomía", href: "/25-anios" },
+          ].map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="px-4 py-2 border border-[#465FCB]/30 text-[#465FCB] text-sm font-medium rounded-md hover:bg-[#465FCB] hover:text-white transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       </section>
 
